@@ -17,5 +17,10 @@
     "plugin:react/recommended",
     // https://github.com/benmosher/eslint-plugin-import
     "plugin:import/recommended"
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
