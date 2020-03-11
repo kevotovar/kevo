@@ -1,18 +1,32 @@
-import React from "react";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 function ContactPage() {
   return (
     <Layout>
       <SEO
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title="Contact"
+        title="Contacto"
       />
       <section>
-        <div className="mx-auto md:w-1/2">
-          <p className="mb-8 leading-loose">Estas son mis redes sociales.</p>
+        <div className="mx-auto">
+          <p className="mb-2 leading-loose">Estas son mis redes sociales.</p>
+          <div className="flex">
+            <a href="https://github.com/kevotovar" target="blank">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+            <a
+              href="https://www.instagram.com/kevtov/"
+              target="blank"
+              className="ml-2"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+          </div>
         </div>
       </section>
     </Layout>

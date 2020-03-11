@@ -1,5 +1,5 @@
-import { graphql, useStaticQuery, Link } from "gatsby";
-import React, { useState } from "react";
+import { graphql, useStaticQuery, Link } from 'gatsby';
+import React, { useState } from 'react';
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
@@ -14,7 +14,7 @@ function Header() {
   `);
 
   return (
-    <header className="bg-teal-700">
+    <header className="bg-blue-800">
       <div className="flex flex-wrap items-center justify-between max-w-4xl mx-auto p-4 md:p-8">
         <Link className="flex items-center no-underline text-white" to="/">
           <span className="font-bold text-xl tracking-tight">
@@ -44,16 +44,16 @@ function Header() {
           {[
             {
               route: `/`,
-              title: `Inicio`
+              title: `Inicio`,
             },
             {
               route: `/acerca-de`,
-              title: `Acerca de`
+              title: `Acerca de`,
             },
             {
               route: `/contacto`,
-              title: `Contacto`
-            }
+              title: `Contacto`,
+            },
           ].map(link => (
             <Link
               className="block md:inline-block mt-4 md:mt-0 md:ml-6 no-underline text-white"

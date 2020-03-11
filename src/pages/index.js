@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import catAndHumanIllustration from "../images/cat-and-human-illustration.svg";
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 function IndexPage() {
   return (
@@ -12,30 +12,29 @@ function IndexPage() {
         title="Inicio"
       />
 
-      <section className="text-center">
-        <img
-          alt="Cat and human sitting on a couch"
-          className="block mx-auto w-1/2"
-          src={catAndHumanIllustration}
-        />
-
-        <h2 className="bg-yellow-400 text-2xl font-bold inline-block my-8 p-3">
-          Hey there! Welcome to your first Gatsby site.
-        </h2>
-
-        <p className="leading-loose">
-          This is a barebones starter for Gatsby styled using{` `}
+      <section className="">
+        <h1 className="bg-yellow-400 text-2xl font-bold inline-block my-4 p-3">
+          Mi sitio personal
+        </h1>
+      </section>
+      <section>
+        <p>
+          Soy un desarrollador Frontend trabajando en{' '}
           <a
-            className="font-bold no-underline text-gray-900"
-            href="https://tailwindcss.com/"
+            href="https://apli.jobs"
+            target="blank"
+            className="underline text-blue-500"
           >
-            Tailwind
+            Apli
           </a>
-          , a utility-first CSS framework.
         </p>
       </section>
     </Layout>
   );
 }
+
+IndexPage.propTypes = {
+  data: PropTypes.any.isRequired,
+};
 
 export default IndexPage;

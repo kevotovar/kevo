@@ -11,7 +11,7 @@ function AboutPage() {
         title="Acerca de"
       />
 
-      <section className="">
+      <section>
         <h1>Soy Kevin Tovar</h1>
         <h2>Desarrollador frontend</h2>
       </section>
