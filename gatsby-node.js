@@ -12,6 +12,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
+            frontmatter {
+              title
+              date
+            }
+            body
           }
         }
       }
@@ -21,13 +26,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
   const posts = result.data.allMdx.edges;
-  posts.forEach = ({ node }) => {
+  posts.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve([__dirname, 'components', 'PostPageLayout.js']),
-      context: { id: node.id },
+      component: path.resolve(
+        __dirname,
+        'src',
+        'components',
+        'PostPageLayout.js'
+      ),
+      context: node,
     });
-  };
+  });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -35,10 +45,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode });
+    console.log(value);
     createNodeField({
       name: 'slug',
       node,
-      value: `/blog${value}`,
+      value: `${value}`,
     });
   }
 };

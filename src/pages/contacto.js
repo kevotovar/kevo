@@ -1,6 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import {
+  faGithub,
+  faInstagram,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -25,6 +29,13 @@ function ContactPage() {
               className="ml-2"
             >
               <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a
+              href="https://twitter.com/kevinwestmx"
+              target="blank"
+              className="ml-2"
+            >
+              <FontAwesomeIcon icon={faTwitter} />
             </a>
           </div>
         </div>

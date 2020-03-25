@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+// import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -29,12 +30,18 @@ function IndexPage() {
           </a>
         </p>
       </section>
+      <section className="mt-4">
+        {/* {nodes.map((node) => (
+          <div key={node.id}>
+            <h2 className="text-xl">
+              <a>{node.frontmatter.title}</a>
+            </h2>
+            <div>{node.excerpt}</div>
+          </div>
+        ))} */}
+      </section>
     </Layout>
   );
 }
-
-IndexPage.propTypes = {
-  data: PropTypes.any.isRequired,
-};
 
 export default IndexPage;

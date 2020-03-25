@@ -1,25 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { Link } from 'gatsby';
-import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Layout from './layout';
 
-const shortcodes = { Link };
-
-export default function PageTemplate({ data }) {
+export default function PageTemplate({ pageContext: { body, frontmatter } }) {
   return (
-    <div>
-      <h1>{data.frontmatter.title}</h1>
-      <MDXProvider components={shortcodes}>
-        <MDXRenderer>{data.body}</MDXRenderer>
-      </MDXProvider>
-    </div>
+    <Layout>
+      <h1>{frontmatter.title}</h1>
+      <h4></h4>
+      <MDXRenderer>{body}</MDXRenderer>
+    </Layout>
   );
 }
 
-// export const pageQuery = graphql``;
-
 PageTemplate.propTypes = {
-  data: PropTypes.any.isRequired,
+  pageContext: PropTypes.any.isRequired,
 };
