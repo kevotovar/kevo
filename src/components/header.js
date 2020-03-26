@@ -14,7 +14,7 @@ function Header() {
   `);
 
   return (
-    <header className="bg-blue-800">
+    <header className="bg-red-700">
       <div className="flex flex-wrap items-center justify-between max-w-4xl mx-auto p-4 md:p-8">
         <Link className="flex items-center no-underline text-white" to="/">
           <span className="font-bold text-xl tracking-tight">
@@ -54,7 +54,7 @@ function Header() {
               route: `/contacto`,
               title: `Contacto`,
             },
-          ].map(link => (
+          ].map((link) => (
             <Link
               className="block md:inline-block mt-4 md:mt-0 md:ml-6 no-underline text-white"
               key={link.title}

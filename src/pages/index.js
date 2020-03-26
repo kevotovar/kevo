@@ -1,11 +1,12 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-function IndexPage() {
+function IndexPage({ data }) {
+  const nodes = data.allMdx.edges;
   return (
     <Layout>
       <SEO
@@ -31,17 +32,39 @@ function IndexPage() {
         </p>
       </section>
       <section className="mt-4">
-        {/* {nodes.map((node) => (
+        {nodes.map(({ node }) => (
           <div key={node.id}>
             <h2 className="text-xl">
               <a>{node.frontmatter.title}</a>
             </h2>
             <div>{node.excerpt}</div>
           </div>
-        ))} */}
+        ))}
       </section>
     </Layout>
   );
 }
+
+IndexPage.propTypes = {
+  data: PropTypes.any.isRequired,
+};
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    allMdx(filter: { frontmatter: { category: { eq: "blog" } } }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            path
+            date(formatString: "DD-MM-YY")
+          }
+          excerpt(pruneLength: 200)
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
