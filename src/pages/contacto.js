@@ -4,6 +4,8 @@ import {
   faGithub,
   faInstagram,
   faTwitter,
+  faTwitch,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
 import Layout from '../components/layout';
@@ -36,6 +38,20 @@ function ContactPage() {
               className="ml-2"
             >
               <FontAwesomeIcon icon={faTwitter} />
+            </a>
+            <a
+              href="https://twitch.tv/kevinwestmx"
+              target="blank"
+              className="ml-2"
+            >
+              <FontAwesomeIcon icon={faTwitch} />
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCOpniw2OtnaylEwjn5yhuoA"
+              target="blank"
+              className="ml-2"
+            >
+              <FontAwesomeIcon icon={faYoutube} />
             </a>
           </div>
         </div>
