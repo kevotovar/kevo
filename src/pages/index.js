@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Button from '../components/Button';
 
 function IndexPage({ data }) {
   const nodes = data.allMdx.edges;
@@ -38,6 +39,9 @@ function IndexPage({ data }) {
               <a>{node.frontmatter.title}</a>
             </h2>
             <div>{node.excerpt}</div>
+            <div className="flex justify-end">
+              <Button to={node.frontmatter.path}>Visitar</Button>
+            </div>
           </div>
         ))}
       </section>
